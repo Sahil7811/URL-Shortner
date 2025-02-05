@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Declares the document type and version of HTML being used (HTML5 here) -->
+<html lang="en">
+  <!-- Specifies that the content is in English -->
+  <head>
+    <!-- Defines the character encoding for the document as UTF-8 (supports most characters) -->
+    <meta charset="UTF-8" />
+    <!-- Ensures the page is responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Sets the title of the webpage (shown in the browser tab) -->
+    <title>Home Page</title>
+    <!-- Add this link to import Poppins font from Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <h1>URL-Shortner</h1>
+    <!-- Main heading of the page -->
+
+    <!-- If 'id' is available in locals, display the generated URL -->
+    <% if (locals.id) { %>
+    <p>URL Generated : http://localhost:8001/url/<%= id %></p>
+    <!-- Displays the short URL if it exists -->
+    <% } %>
+
+    <div>
+      <!-- A form to accept the original URL from the user and send it to the backend (controllers)-->
+      <form method="POST" action="/url">
+        <label> Enter Your Original URL </label>
+        <!-- Label for the URL input field -->
+        <input type="text" name="url" placeholder="https://example.com" />
+        <!-- Input field for the original URL -->
+        <button type="submit">Generate</button>
+        <!-- Button to submit the form and generate the short URL -->
+      </form>
+    </div>
+
+    <div>
+      <!-- If 'urls' exists in locals, display a table with all the shortened URLs and related data -->
+      <% if (locals.urls) { %>
+      <table>
+        <thead>
+          <th>S. No.</th>
+          <!-- Column header for serial number -->
+          <th>ShortID</th>
+          <!-- Column header for the shortened URL ID -->
+          <th>Redirect</th>
+          <!-- Column header for the full URL that the short URL redirects to -->
+          <th>Clicks</th>
+          <!-- Column header for the number of times the short URL has been visited -->
+        </thead>
+        <tbody>
+          <!-- Loop through all URLs in 'urls' array and display each in a table row -->
+          <% urls.forEach((url,index) => { %>
+          <tr>
+            <td><%= index+1 %></td>
+            <!-- Serial number for the URL entry -->
+            <td><%= url.shortId %></td>
+            <!-- Displays the short URL ID -->
+            <td><%= url.redirectURL %></td>
+            <!-- Displays the original URL that the short URL redirects to -->
+            <td><%= url.visitHistory.length %></td>
+            <!-- Displays the number of visits (length of visitHistory array) -->
+          </tr>
+          <% }) %>
+          <!-- End of loop for displaying URLs -->
+        </tbody>
+      </table>
+      <% } %>
+      <!-- End of check for 'urls' -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <h1>Login</h1>
+    <h3>Enter Your Credentials</h3>
+    <form method="POST" , action="/user/login">
+      <label> Email </label>
+      <!-- name is from user controllers where user's email is defined as email -->
+      <input type="text" required name="email" />
+      <label> Password </label>
+      <!-- name is from user controllers where user's pw is defined as password -->
+      <input type="text" required name="password" />
+      <button type="submit">Login</button>
+    </form>
+  </body> 
+</html>

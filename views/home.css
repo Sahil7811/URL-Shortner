@@ -1,0 +1,185 @@
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body Styling */
+  body {
+    font-family: "Poppins", sans-serif; /* Elegant modern font */
+    background-color: #A7B49E; /* Light soft greenish background */
+    color: #212121; /* Dark gray text color for readability */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto; /* Auto height to prevent issues with 100vh on mobile */
+    min-height: 100vh; /* Ensures the body takes full height, but doesn't overflow */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  /* Header Styling */
+  h1 {
+    font-size: 3rem;
+    color: #09122C; /* Calming blue for the header */
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+    letter-spacing: 4px;
+  }
+
+  /* Form Container */
+  form {
+    background-color: #ffffff; /* White background for the form */
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
+    width: 100%;
+    max-width: 600px; /* Ensure the form doesn’t stretch too wide */
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  /* Form hover effect */
+  form:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  }
+
+  /* Form elements */
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #424242; /* Darker gray for better contrast */
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus {
+    border-color: #5c6bc0; /* Blue border on focus */
+  }
+
+  /* Button Styling */
+  button {
+    width: 100%;
+    padding: 15px;
+    background-color: #155E95; /* Light green for the button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  /* Button hover effect */
+  button:hover {
+    background-color: #09122C; /* Slightly darker green */
+    transform: translateY(-2px);
+  }
+
+  /* Button active effect */
+  button:active {
+    background-color: #09122C; /* Darker green on click */
+    transform: translateY(0);
+  }
+
+  /* Generated URL Section */
+  p {
+    font-size: 1rem;
+    color: #424242;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 1.8;
+  }
+
+  /* Table Styling */
+  table {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+    color: #424242;
+  }
+
+  th {
+    background-color: #155E95; /* Blue background for header */
+    color: white;
+    font-weight: 600;
+  }
+
+  tr {
+    transition: background-color 0.3s ease;
+  }
+
+  /* Hover effect for table rows */
+  tr:hover {
+    background-color: #f5f5f5; /* Light gray hover effect */
+  }
+
+  /* Striped rows for better readability */
+  tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+
+  /* Responsive Table */
+  @media (max-width: 768px) {
+    table {
+      width: 95%;
+    }
+
+    form {
+      width: 95%;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    input[type="text"],
+    button {
+      padding: 12px;
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+    table {
+      width: 100%;
+    }
+  }
